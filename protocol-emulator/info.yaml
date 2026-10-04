@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Protocol Emulator"
+  author:       "Brown Open Silicon"
+  discord:      ""      # Your discord username (optional)
+  description:  "Programmable pin engine that runs UART, SPI, I2C and more in firmware"
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  # Jane Street competition requires 6x4 (24 tiles). The stock template comment
+  # doesn't list 6x4 yet; if the GDS action rejects it, use Jane Street's template.
+  tiles: "6x4"
+
+  # Top module must start with "tt_um_" and be unique across the shuttle.
+  top_module:  "tt_um_bos_protocol_emu"
+
+  # Source files must be in ./src, one per line.
+  # Keep in sync with PROJECT_SOURCES in test/Makefile.
+  source_files:
+    - "project.v"
+    - "uart_tx.v"
+
+# Pinout (milestone 0: fixed UART TX). DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "DATA0"
+  ui[1]: "DATA1"
+  ui[2]: "DATA2"
+  ui[3]: "DATA3"
+  ui[4]: "DATA4"
+  ui[5]: "DATA5"
+  ui[6]: "DATA6"
+  ui[7]: "DATA7"
+
+  # Outputs
+  uo[0]: "UART_TX"
+  uo[1]: "BUSY"
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "SEND"
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
